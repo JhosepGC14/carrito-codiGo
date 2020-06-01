@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9c57b3664ad20bfafbc0d823faee5973",
+    "revision": "d38a50e94251152884830d9e400382a6",
     "url": "/carrito-codiGo/index.html"
   },
   {
-    "revision": "39448bf8736ad215f003",
+    "revision": "1195d757ab6d4d288127",
     "url": "/carrito-codiGo/static/css/2.e94183ad.chunk.css"
   },
   {
-    "revision": "40d3f9940cb908c1c143",
-    "url": "/carrito-codiGo/static/css/main.580dc5dc.chunk.css"
+    "revision": "b427171aa35a0638a655",
+    "url": "/carrito-codiGo/static/css/main.4858250e.chunk.css"
   },
   {
-    "revision": "39448bf8736ad215f003",
-    "url": "/carrito-codiGo/static/js/2.15ac9990.chunk.js"
+    "revision": "1195d757ab6d4d288127",
+    "url": "/carrito-codiGo/static/js/2.96673e1f.chunk.js"
   },
   {
     "revision": "9be48472b35189e9c6b1ed6407464107",
-    "url": "/carrito-codiGo/static/js/2.15ac9990.chunk.js.LICENSE.txt"
+    "url": "/carrito-codiGo/static/js/2.96673e1f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "40d3f9940cb908c1c143",
-    "url": "/carrito-codiGo/static/js/main.78f954b2.chunk.js"
+    "revision": "b427171aa35a0638a655",
+    "url": "/carrito-codiGo/static/js/main.6aa18d5f.chunk.js"
   },
   {
     "revision": "86c9d2051fc2dd4094a0",

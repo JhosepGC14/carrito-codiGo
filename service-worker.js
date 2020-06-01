@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/carrito-codiGo/precache-manifest.5e6a43636646610e6a71b6c432ac436d.js"
+  "/carrito-codiGo/precache-manifest.d6c16851d8df48fae7b9614ee3136455.js"
 );
 
 self.addEventListener('message', (event) => {
