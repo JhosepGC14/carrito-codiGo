@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   StepperAction,
   StepperContent,
@@ -15,17 +15,12 @@ import "./StepOne.scss";
 function StepOne({ watch = () => {}, vertical = false }) {
   const [totalProducts, setTotalProducts] = useState(1);
   const dispatch = useDispatch();
-  const { resolve, getData } = React.useContext(StepperContext);
+  const { resolve } = React.useContext(StepperContext);
   const products = useSelector((state) => state.shoppingCar.productsAdded);
 
   function onSubmit(e) {
     e.preventDefault();
     resolve();
-    console.log("comprar!!!");
-  }
-
-  function total(a, b) {
-    return a * b;
   }
 
   return (
@@ -221,9 +216,11 @@ function StepOne({ watch = () => {}, vertical = false }) {
           <div className="text-right mt-20">
             <h2>
               Total a pagar S/.{" "}
-              {products.reduce((acumulador, valorActual) => {
-                return acumulador + valorActual.priceTotal;
-              }, 0).toFixed(2)}
+              {products
+                .reduce((acumulador, valorActual) => {
+                  return acumulador + valorActual.priceTotal;
+                }, 0)
+                .toFixed(2)}
             </h2>
           </div>
           <div className="text-right mt-20"></div>

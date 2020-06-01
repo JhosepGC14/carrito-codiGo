@@ -11,6 +11,10 @@ function ProductsReducer(state = initialState, action) {
       return Object.assign({}, state, {
         productDetail: action.payload,
       });
+    // case GET_CATEGORY_PRODUCTS:
+    //   return Object.assign({}, state, {
+    //     categoryList: action.payload.id,
+    //   });
     default:
       return state;
   }

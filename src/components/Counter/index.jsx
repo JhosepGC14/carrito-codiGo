@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useCallback } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import style from "./counter.module.css";
 
 function Counter({ max, watch = () => {}, className, initialValue = 1 }) {

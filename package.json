@@ -1,5 +1,5 @@
 {
-  "homepage": "https://yourusername.github.io/repository-name",
+  "homepage": "https://jhosepgc14.github.io/carrito-codiGo",
   "name": "carro-compras",
   "version": "0.1.0",
   "private": true,
@@ -27,8 +27,8 @@
     "styled-components": "^5.1.0"
   },
   "scripts": {
-    "predploy" : "npm run build",
-    "deploy":"gh-pages -d build",
+    "predploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

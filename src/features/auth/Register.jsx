@@ -38,6 +38,7 @@ function Register() {
       alert("Bienvenido a nuestro sistema logueate por favor");
       history.replace("login");
     }
+    //eslint-disable-next-line
   }, [statusRegister]);
 
   return (

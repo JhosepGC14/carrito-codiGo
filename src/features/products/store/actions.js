@@ -14,6 +14,15 @@ function setProductDetail(payload) {
   };
 }
 
+// function getCategoryProducts(payload) {
+//   return {
+//     type: GET_CATEGORY_PRODUCTS,
+//     payload,
+//   };
+// }
+
+
+
 function getProducts() {
   return function (dispatch) {
     fetch("https://carallenglish.herokuapp.com/apis_product/List_Products")
@@ -24,10 +33,19 @@ function getProducts() {
 
 function getProductDetail(id) {
   return function (dispatch) {
-    fetch(`http://localhost:3000/product-detail/${id}`)
+    fetch(`https://carallenglish.herokuapp.com/apis_product/Detail_Products/${id}`)
       .then((response) => response.json())
       .then((product) => dispatch(setProductDetail(product)));
   };
 }
+
+// function getCategory(name) {
+//   return function (dispatch) {
+//     fetch(`https://carallenglish.herokuapp.com/apis_category/List_Category_Products/${id}`)
+//       .then((response) => response.json())
+//       .then((category) => dispatch(getCategoryProducts(category)));
+//   };
+// }
+
 
 export { setProducts, setProductDetail, getProducts, getProductDetail };

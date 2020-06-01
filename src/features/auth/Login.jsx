@@ -25,6 +25,7 @@ function Login() {
     if (statusLogin) {
       history.replace('/')
     }
+    //eslint-disable-next-line
   }, [statusLogin]);
 
   return (

@@ -12,6 +12,7 @@ function Products() {
 
   useEffect(() => {
     dispatch(getProducts());
+    //eslint-disable-next-line
   }, []);
 
   return (

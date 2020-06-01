@@ -17,7 +17,7 @@ import style from "./StepTwo.module.css";
 function StepTwo() {
   const dispatch = useDispatch();
   const valuesForm = useSelector((state) => state.shoppingCar.form.step_two);
-  console.log("valuesForm", valuesForm);
+  console.log(valuesForm);
   const [userValues, setUserValues] = useState({
     needBill: false,
     name: "",
@@ -35,14 +35,12 @@ function StepTwo() {
     contactNumber: "",
     shippingFee: 69,
   });
-  const { resolve, getData } = React.useContext(StepperContext);
+  const { resolve } = React.useContext(StepperContext);
 
   function onSubmitTwo(e) {
     e.preventDefault();
     dispatch(setFormStep(userValues, "two"));
-    console.log("acaaa!!!!");
     resolve();
-    // console.log("comprar!!!");
   }
 
   return (
@@ -74,12 +72,7 @@ function StepTwo() {
                 })
               }
               required
-            >
-              {/* <option value="0" selected>
-                No
-              </option>
-              <option value="1">Si</option> */}
-            </Select>
+            ></Select>
           </div>
           <div className={style.grid}>
             <div>
@@ -151,35 +144,7 @@ function StepTwo() {
                     deparment: e.target.value,
                   })
                 }
-              >
-                {/* <option value="Lima" selected>
-                  Lima
-                </option>
-                <option value="Amazonas">Amazonas</option>
-                <option value="Ancash">Ancash</option>
-                <option value="Apurimac">Apurimac</option>
-                <option value="Arequipa">Arequipa</option>
-                <option value="Ayacucho">Ayacucho</option>
-                <option value="Cajamarca">Cajamarca</option>
-                <option value="Callao">Callao</option>
-                <option value="Cusco">Cusco</option>
-                <option value="Huancavelica">Huancavelica</option>
-                <option value="Huanuco">Huanuco</option>
-                <option value="Ica">Ica</option>
-                <option value="Junin">Junin</option>
-                <option value="La Libertad">La Libertad</option>
-                <option value="Lambayeque">Lambayeque</option>
-                <option value="Loreto">Loreto</option>
-                <option value="Madre De Dios">Madre De Dios</option>
-                <option value="Moquegua">Moquegua</option>
-                <option value="Pasco">Pasco</option>
-                <option value="Piura">Piura</option>
-                <option value="Puno">Puno</option>
-                <option value="San Martin">San Martin</option>
-                <option value="Tacna">Tacna</option>
-                <option value="Tumbes">Tumbes</option>
-                <option value="Ucayali">Ucayali</option> */}
-              </Select>
+              ></Select>
             </div>
             <div>
               <label className={style.label}>Provincias: </label>
@@ -199,35 +164,7 @@ function StepTwo() {
                     province: e.target.value,
                   })
                 }
-              >
-                {/* <option value="Lima" selected>
-                  Lima
-                </option>
-                <option value="Amazonas">Amazonas</option>
-                <option value="Ancash">Ancash</option>
-                <option value="Apurimac">Apurimac</option>
-                <option value="Arequipa">Arequipa</option>
-                <option value="Ayacucho">Ayacucho</option>
-                <option value="Cajamarca">Cajamarca</option>
-                <option value="Callao">Callao</option>
-                <option value="Cusco">Cusco</option>
-                <option value="Huancavelica">Huancavelica</option>
-                <option value="Huanuco">Huanuco</option>
-                <option value="Ica">Ica</option>
-                <option value="Junin">Junin</option>
-                <option value="La Libertad">La Libertad</option>
-                <option value="Lambayeque">Lambayeque</option>
-                <option value="Loreto">Loreto</option>
-                <option value="Madre De Dios">Madre De Dios</option>
-                <option value="Moquegua">Moquegua</option>
-                <option value="Pasco">Pasco</option>
-                <option value="Piura">Piura</option>
-                <option value="Puno">Puno</option>
-                <option value="San Martin">San Martin</option>
-                <option value="Tacna">Tacna</option>
-                <option value="Tumbes">Tumbes</option>
-                <option value="Ucayali">Ucayali</option> */}
-              </Select>
+              ></Select>
             </div>
             <div>
               <label className={style.label}>Distrito: </label>
@@ -247,36 +184,7 @@ function StepTwo() {
                     district: e.target.value,
                   })
                 }
-              >
-                {/* <option value="Lima" selected>
-                  Por favor selecione un distrito
-                </option>
-                <option value="Amazonas">Amazonas</option>
-                <option value="Lima">Lima</option>
-                <option value="Ancash">Ancash</option>
-                <option value="Apurimac">Apurimac</option>
-                <option value="Arequipa">Arequipa</option>
-                <option value="Ayacucho">Ayacucho</option>
-                <option value="Cajamarca">Cajamarca</option>
-                <option value="Callao">Callao</option>
-                <option value="Cusco">Cusco</option>
-                <option value="Huancavelica">Huancavelica</option>
-                <option value="Huanuco">Huanuco</option>
-                <option value="Ica">Ica</option>
-                <option value="Junin">Junin</option>
-                <option value="La Libertad">La Libertad</option>
-                <option value="Lambayeque">Lambayeque</option>
-                <option value="Loreto">Loreto</option>
-                <option value="Madre De Dios">Madre De Dios</option>
-                <option value="Moquegua">Moquegua</option>
-                <option value="Pasco">Pasco</option>
-                <option value="Piura">Piura</option>
-                <option value="Puno">Puno</option>
-                <option value="San Martin">San Martin</option>
-                <option value="Tacna">Tacna</option>
-                <option value="Tumbes">Tumbes</option>
-                <option value="Ucayali">Ucayali</option> */}
-              </Select>
+              ></Select>
             </div>
             <div>
               <label className={style.label}>Vía: </label>
@@ -295,14 +203,7 @@ function StepTwo() {
                     via: e.target.value,
                   })
                 }
-              >
-                {/* <option value="Avenida" selected>
-                  Avenida
-                </option>
-                <option value="Calle">Calle</option>
-                <option value="Jiron">Jiron</option>
-                <option value="Urbanizacion">Urbanizacion</option> */}
-              </Select>
+              ></Select>
             </div>
             <div class={style.column2}>
               <label className={style.label} for="">
@@ -337,12 +238,7 @@ function StepTwo() {
                     livingPlace: e.target.value,
                   })
                 }
-              >
-                {/* <option value="Departamento" selected>
-                  Departamento
-                </option>
-                <option value="Casa">Casa</option> */}
-              </Select>
+              ></Select>
             </div>
             <div class={style.column2}>
               <label className={style.label} for="">
@@ -379,14 +275,7 @@ function StepTwo() {
                     zone: e.target.value,
                   })
                 }
-              >
-                {/* <option value="Lima" selected>
-                  Seleccione la zona
-                </option>
-                <option value="Manzana">Manzana</option>
-                <option value="Lote">Lote</option>
-                <option value="Zona">Zona</option> */}
-              </Select>
+              ></Select>
             </div>
             <div>
               <label className={style.label} for="">

@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  StepperAction,
-  StepperContent,
-  StepperContext,
-} from "react-material-stepper";
+import { StepperContent, StepperContext } from "react-material-stepper";
 import StripeCheckout from "react-stripe-checkout";
 import { useSelector } from "react-redux";
 
@@ -11,7 +7,7 @@ import style from "./StepThree.module.css";
 import card from "../../../assets/images/niubiz.png";
 
 function StepThree() {
-  const { resolve, getData } = React.useContext(StepperContext);
+  const { resolve } = React.useContext(StepperContext);
   const products = useSelector((state) => state.shoppingCar.productsAdded);
   const amount = products
     .reduce((acumulador, valorActual) => {
@@ -19,23 +15,12 @@ function StepThree() {
     }, 0)
     .toFixed(2);
 
-  console.log("amount", amount);
-
   function onSubmit(e) {
     e.preventDefault();
-    // resolve();
-    console.log("comprar!!!");
   }
 
   return (
-    <StepperContent
-      onSubmit={onSubmit}
-      // actions={
-      //   <React.Fragment>
-      //     <StepperAction type="submit">PAGAR AHORA</StepperAction>
-      //   </React.Fragment>
-      // }
-    >
+    <StepperContent onSubmit={onSubmit}>
       <section className={style.mpago}>
         <form>
           <div className={`${style.facturacion} ${style.flex}`}>
@@ -83,9 +68,8 @@ function StepThree() {
             </div>
           </div>
           <StripeCheckout
-            stripeKey="pk_test_cQnDXCvHofrYQ6cciCFZEOrr00JfzqlZ8v"
+            stripeKey="pk_test_QjVR5rk9mW5gnKQgJBYrU4mZ00gnE32q39"
             token={(data) => {
-              console.log("data", data);
               resolve();
             }}
             label="Pagar"

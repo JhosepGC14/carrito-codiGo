@@ -4,7 +4,6 @@ import { resetState } from "../store/actions";
 import style from "./StepFour.module.css";
 import check from "../../../assets/images/check1.jpg";
 import {
-  StepperAction,
   StepperContent,
   StepperContext,
 } from "react-material-stepper";
@@ -12,11 +11,12 @@ import { useSelector } from "react-redux";
 
 function StepFour() {
   const dispatch = useDispatch();
-  const { resolve, getData } = React.useContext(StepperContext);
+  const { resolve} = React.useContext(StepperContext);
   const products = useSelector((state) => state.shoppingCar.productsAdded);
   useEffect(() => {
     resolve(true);
     dispatch(resetState());
+    //eslint-disable-next-line
   }, []);
 
   return (

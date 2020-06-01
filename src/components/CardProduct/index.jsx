@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import Button from "../../ui/Button";
 import style from "./cardproduct.module.css";
 
@@ -37,8 +36,6 @@ function CardProduct({
         </h2>
         <p className={style.description}>{description}</p>
         <p className={style.currency}>
-          {/* {currency}
-          {price} x {meassure} */}
           S/.
           {list_price.length > 0 && list_price[0].pricesale}
         </p>

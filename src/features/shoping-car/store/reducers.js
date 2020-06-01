@@ -37,11 +37,8 @@ function ShoppingCarReducer(state = initialState, action) {
       }
 
     case REMOVE_PRODUCT:
-      state.productsAdded.filter((product) => {
-        console.log(product);
-        console.log(action.payload);
-        //product.id !== action.payload.id
-      });
+      // state.productsAdded.filter((product) => {
+      // });
       return Object.assign({}, state, {
         productsAdded: state.productsAdded.filter((product) => {
           return product.id !== action.payload.id;

@@ -4,7 +4,6 @@ import { getProductDetail } from "./store/actions";
 import { addProduct } from "../shoping-car/store/actions";
 import { useParams } from "react-router-dom";
 import ImageGallery from "react-image-gallery";
-
 import Button from "../../ui/Button";
 import Counter from "../../components/Counter";
 import style from "./productDetail.module.css";
@@ -15,42 +14,27 @@ function ProductDetail({ addCar = () => {} }) {
   let { detail } = useParams();
   const currentProduct = useSelector((state) => state.products.productDetail);
   const productsAdded = useSelector((state) => state.shoppingCar.productsAdded);
-  const productFound = productsAdded.find((product) => product.id == detail);
+  const productFound = productsAdded.find((product) => product.id === detail);
 
   const {
-    producto: title,
-    descripcion: description,
-    lista_precios,
-    producto_fotos,
+    product,
+    feature,
+    description,
+    list_price,
+    product_photos,
   } = currentProduct;
 
   useEffect(() => {
     dispatch(getProductDetail(detail));
+    //eslint-disable-next-line
   }, [detail]);
 
-  // const images = [
-  //   {
-  //     original: "https://picsum.photos/id/1018/1000/600/",
-  //     thumbnail: "https://picsum.photos/id/1018/250/150/",
-  //   },
-  //   {
-  //     original: "https://picsum.photos/id/1015/1000/600/",
-  //     thumbnail: "https://picsum.photos/id/1015/250/150/",
-  //   },
-  //   {
-  //     original: "https://picsum.photos/id/1019/1000/600/",
-  //     thumbnail: "https://picsum.photos/id/1019/250/150/",
-  //   },
-  // ];
-
-  console.log("currentProduct", currentProduct);
-
   const images =
-    !!producto_fotos && !!producto_fotos.length
-      ? producto_fotos.map(({ photo }) => {
+    !!product_photos && !!product_photos.length
+      ? product_photos.map(({ photo }) => {
           return {
-            original: photo,
-            thumbnail: photo,
+            photo1: photo,
+            photo2: photo,
           };
         })
       : false;
@@ -66,15 +50,16 @@ function ProductDetail({ addCar = () => {} }) {
               </div>
             )}
             <div>
-              <h1>{title}</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <h1>{product}</h1>
+              <h2>{feature}</h2>
+              <p>{description}</p>
               <h2>
                 S/
-                {!!lista_precios &&
-                  !!lista_precios.length &&
-                  lista_precios[0] &&
-                  lista_precios[0].precioventa &&
-                  lista_precios[0].precioventa}{" "}
+                {!!list_price &&
+                  !!list_price.length &&
+                  list_price[0] &&
+                  list_price[0].pricesale &&
+                  list_price[0].pricesale}{" "}
                 x kg
               </h2>
               <Counter
@@ -104,7 +89,7 @@ function ProductDetail({ addCar = () => {} }) {
               </div>
             </div>
           </div>
-          <div clasName={style.arrowBottom}>
+          <div className={style.arrowBottom}>
             <h2>Descripcion del producto</h2>
             <p className={style.customP}>{description}</p>
             <br />
